@@ -1,0 +1,11 @@
+"sku_id","warehouse","category","months_overridden","override_mape_pct","system_mape_pct"
+APP-105,West-DC,Apparel,10,32.8,8.84
+APP-102,West-DC,Apparel,9,23.97,8.87
+APP-104,West-DC,Apparel,9,24.78,9.86
+APP-106,North-DC,Apparel,14,24.65,10.56
+APP-101,West-DC,Apparel,10,24.62,11.13
+APP-103,South-DC,Apparel,9,23.73,13.08
+APP-103,West-DC,Apparel,10,17.86,8.82
+APP-105,North-DC,Apparel,9,14.57,7.0
+APP-105,South-DC,Apparel,12,20.32,13.32
+APP-102,North-DC,Apparel,10,14.26,7.97

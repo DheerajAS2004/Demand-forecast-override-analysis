@@ -1,0 +1,10 @@
+"category","warehouse","avg_bias_pct"
+Apparel,West-DC,23.19
+Apparel,South-DC,14.35
+Apparel,North-DC,13.28
+Perishable,North-DC,3.33
+Perishable,South-DC,1.17
+Perishable,West-DC,0.88
+Electronics,West-DC,-0.09
+Electronics,South-DC,-0.39
+Electronics,North-DC,-1.65
