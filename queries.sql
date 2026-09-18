@@ -1,11 +1,5 @@
--- ============================================================
--- Demand Forecast Override Analysis
--- SQL Queries (run against forecast_supply_chain_data table)
--- ============================================================
-
--- ------------------------------------------------------------
 -- Query 1: Overall MAPE by category (System vs Final forecast)
--- ------------------------------------------------------------
+
 SELECT
     category,
     ROUND(AVG(ABS(system_forecast - actual_demand) * 1.0 / actual_demand) * 100, 2) AS system_mape_pct,
@@ -15,10 +9,7 @@ GROUP BY category
 ORDER BY category;
 
 
--- ------------------------------------------------------------
 -- Query 2: Bias direction (overridden rows only)
--- Positive = over-forecasting, Negative = under-forecasting
--- ------------------------------------------------------------
 SELECT
     category,
     warehouse,
@@ -29,10 +20,9 @@ GROUP BY category, warehouse
 ORDER BY avg_bias_pct DESC;
 
 
--- ------------------------------------------------------------
+
 -- Query 3: Worst-offender SKU/warehouse combinations
--- Ranked by the accuracy gap caused by manual overrides
--- ------------------------------------------------------------
+
 SELECT
     sku_id,
     warehouse,
@@ -48,10 +38,9 @@ ORDER BY (override_mape_pct - system_mape_pct) DESC
 LIMIT 10;
 
 
--- ------------------------------------------------------------
+
 -- Query 4: Override rate vs forecast accuracy
--- Feeds the CORREL() calculation in Excel
--- ------------------------------------------------------------
+
 SELECT
     sku_id,
     warehouse,
@@ -64,10 +53,9 @@ GROUP BY sku_id, warehouse
 ORDER BY override_rate_pct DESC;
 
 
--- ------------------------------------------------------------
+
 -- Query 5: Estimated excess inventory carrying cost
--- Assumes a 15% annual carrying-cost rate (refined further in Excel)
--- ------------------------------------------------------------
+
 SELECT
     category,
     warehouse,
